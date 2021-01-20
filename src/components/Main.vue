@@ -1,7 +1,8 @@
 <template>
     <div class="main-container">
         <div class="cover"> 
-            <Navbar :isFixed="false"></Navbar>
+            <Navbar></Navbar>
+            
             <img class="mx-auto" src="../assets/svg_folder/wave2.svg" alt="wave">
             <!-- <img class="mx-auto" src="../assets/svg_folder/wave.svg" alt="wave"> -->
             <main>
@@ -9,11 +10,16 @@
                     <p class="white para1 ">Hello, My Name is</p>
                     <h1 class="white">FADI KABA</h1>
                     <p class="white para2">Backend and frontend web developer</p>
-                    <button @click="show" class="btn btn-light">Contact me</button>
-                </div> 
-                   <Carous></Carous>    
+                    <button class="btn btn-light">Contact me</button>
+                </div>
+                     <Carous></Carous>  
             </main>         
         </div>
+
+
+
+
+
     </div>
 </template>
 <script>
@@ -23,13 +29,22 @@ import Carous from './Carous';
 
 export default {
     name:'Main',
+    data: function(){
+        return{
+            
+        }
+    },
     components:{
         Navbar, Carous
     },
+    mounted: function(){
+        
+    },
     methods:{
-        show: function(){
-            console.log("show");
-        }
+      
+    },
+    computed: {
+
     }
 }
 </script>
@@ -76,4 +91,5 @@ export default {
           }
        }
    }
+
 </style>
