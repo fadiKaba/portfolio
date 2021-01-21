@@ -2,9 +2,7 @@
     <div class="main-container">
         <div class="cover"> 
             <Navbar></Navbar>
-            
-            <img class="mx-auto" src="../assets/svg_folder/wave2.svg" alt="wave">
-            <!-- <img class="mx-auto" src="../assets/svg_folder/wave.svg" alt="wave"> -->
+            <img class="mx-auto" src="../assets/svg_folder/wave.svg" alt="wave">  
             <main>
                 <div class="title mt-5 py-5">
                     <p class="white para1 ">Hello, My Name is</p>
@@ -57,7 +55,7 @@ export default {
        font-family: sans-serif;
        .cover{
           background-color: $color1; 
-          height: 100vh;
+          height: 90vh;
           position:relative;
           img{
               position:absolute;
@@ -91,5 +89,4 @@ export default {
           }
        }
    }
-
 </style>
