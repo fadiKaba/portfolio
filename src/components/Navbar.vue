@@ -1,44 +1,24 @@
 <template>
     <div class="">
-    <!-- <nav :class="['navbar fixed-top navbar-expand-lg', isNotTop ? 'not-top' : 'now-top']">
-        <div class="container">
-            <a :class="['navbar-brand text-light', isNotTop ? 'font-big':'font-normal']" href="#">fadikaba</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">tt</span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item mx-md-3">
-                <a class="nav-link text-light" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item mx-md-3">
-                <a class="nav-link text-light" href="#">Features</a>
-                </li>
-                <li class="nav-item mx-md-3">
-                <a class="nav-link text-light" href="#">Pricing</a>
-                </li>
-            </ul>
-            </div>
-        </div>
-    </nav> -->
     <div>
-  <b-navbar toggleable="lg"  :class="['navbar fixed-top navbar-expand-lg', isNotTop? 'is-not-top': 'is-top']">
-    <b-navbar-brand href="#" :class="['navbar-brand']">fadikaba</b-navbar-brand>
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-navbar toggleable="lg"  :class="['navbar fixed-top navbar-expand-lg px-md-5', isT? 'is-not-top': 'is-top']">
+            <b-navbar-brand href="#" ><img width="25px" src="../assets/iconic/contact.png" alt="@"> <span class="text-light">Fadi</span><span :class="['navbar-brand', isT ? 'text-warning' : '']">Kaba</span> </b-navbar-brand>
+            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav>
-        
-      </b-navbar-nav>
+            <b-collapse id="nav-collapse" :class="isT? 'is-not-top': 'is-top'" is-nav>
+            <b-navbar-nav>
+                
+            </b-navbar-nav>
 
-      <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-          <b-nav-item href="#" class="">Home</b-nav-item>
-          <b-nav-item href="#" class="white">Features</b-nav-item>
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
-</div>
+            <!-- Right aligned nav items -->
+            <b-navbar-nav class="ml-auto">
+                <b-nav-item href="#skills" class="mx-md-2 nav-b-item">SKILLS</b-nav-item>
+                <b-nav-item href="#about" class="mx-md-2 nav-b-item">About</b-nav-item>
+                <b-nav-item href="#portfolio" class="mx-md-2 nav-b-item">Portfolio</b-nav-item>
+            </b-navbar-nav>
+            </b-collapse>
+        </b-navbar>
+    </div>
     </div>
 </template>
 <script>
@@ -51,34 +31,53 @@ export default {
             isNotTop: false,
         }
     },
-    mounted: function(){
-        this.changeIstop();
+    created:function(){
+      this.changeIstop();
+    },
+    destroyed: function(){
+        
         console.log()
     },
     methods:{
        changeIstop: function(){
-          let th = this;
-          window.document.body.onscroll = function(){
-            th.he();
-         }
-      },
+            let th = this;
+            window.addEventListener('scroll', function(){
+                let top = Math.abs(document.body.getBoundingClientRect().y);
+                if(top > 100){
+                    th.isNotTop = true;
+                }else{
+                    th.isNotTop = false;
+                }
+            }
+            )
+       },
       he: function(){
             let top = Math.abs(document.body.getBoundingClientRect().y);
-           if(top > 100){
+           if(top > 50){
+               console.log(this.isNotTop)
              this.isNotTop = true;
            }else{
                this.isNotTop = false;
            }
       }
+    },
+    computed:{
+        isT: function(){
+            return this.isNotTop;
+        }
     }
 }
 </script>
 <style lang="scss" scoped>
 $color1:#488CEA;
-$color2: rgb(255, 203, 5);
-nav{
-    
+$color2: #ffcb05;
+$color3: #043769;
+nav{   
     background-color: $color1;
+    font-family: 'open-sans', sans-serif;
+    .navbar-collapse{
+       background-color: $color3;
+    }
 }
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand{
     color:#fff;
@@ -96,24 +95,30 @@ nav{
 .is-not-top{
   animation: out 0.5s forwards;
 }
+.nav-b-item{
+    text-transform: uppercase;
+}
+.yellow{
+    color:$color2;
+    text-transform: capitalize;
+}
 @keyframes in {
     0%{
-        height: 45px; 
-        border-bottom: solid 2px rgb(57, 121, 209);
+      //  border-bottom: solid 2px rgb(57, 121, 209);
+        background-color: $color3 ;
     }
     100%{
-        height: 60px;
         border:none;
+        background-color: $color1 ;
     }
 }
 @keyframes out{
     0%{
-        height: 60px;
-        border:none;
+        background-color: $color1 ;
     }
     100%{
-        height: 45px;
-        border-bottom: solid 2px rgb(57, 121, 209);
+        background-color: $color3 ;
+      //  border-bottom: solid 2px rgb(57, 121, 209);
     }
 }
 </style>

@@ -2,28 +2,31 @@
     <div class="main-container">
         <div class="cover"> 
             <Navbar></Navbar>
-            <img class="mx-auto" src="../assets/svg_folder/wave.svg" alt="wave">  
-            <main>
+            <img class="mx-auto" width="10px" src="../assets/svg_folder/wave.svg" alt="wave"> 
+            <main class="container">
                 <div class="title mt-5 py-5">
                     <p class="white para1 ">Hello, My Name is</p>
                     <h1 class="white">FADI KABA</h1>
                     <p class="white para2">Backend and frontend web developer</p>
-                    <button class="btn btn-light">Contact me</button>
+                    <a href="#about" class="btn btn-light">Contact me</a>
                 </div>
                      <Carous></Carous>  
-            </main>         
+                     <About></About>
+                     <Skills></Skills>
+                     <Experience></Experience>  
+            </main> 
+            <Footer></Footer>        
         </div>
-
-
-
-
-
     </div>
 </template>
 <script>
 
 import Navbar from './Navbar';
 import Carous from './Carous';
+import About from './About';
+import Skills from './Skills';
+import Experience from './Experience';
+import Footer from './Footer';
 
 export default {
     name:'Main',
@@ -33,10 +36,9 @@ export default {
         }
     },
     components:{
-        Navbar, Carous
+        Navbar, Carous, About, Skills, Experience, Footer
     },
     mounted: function(){
-        
     },
     methods:{
       
@@ -52,16 +54,16 @@ export default {
    $color3: rgb(75, 194, 226);
    .main-container{
        text-align:center;
-       font-family: sans-serif;
+       font-family: 'Open Sans', sans-serif;;
        .cover{
           background-color: $color1; 
-          height: 90vh;
+          height: 100vh;
           position:relative;
           img{
               position:absolute;
               bottom:0;
               left:0;
-              width: 100vw;
+              width: 98.9vw;
           }
        } 
        .white{
@@ -76,7 +78,7 @@ export default {
               h1{
                   font-weight: bold;
               }
-              button{
+              a{
                   border:none;
                   border-radius: 25px;
                   background-color: $color3;
@@ -89,4 +91,8 @@ export default {
           }
        }
    }
+    button.slick-prev:before, button.slick-next:before {
+      background-color: red !important;
+}
+
 </style>

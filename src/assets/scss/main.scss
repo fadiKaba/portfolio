@@ -1,0 +1,36 @@
+$color1: #488CEA;
+$color2:#89B7F7;
+html {
+    scroll-behavior: smooth;
+    font-family: 'open sans', sans-serif;
+  }
+button.slick-prev:before, button.slick-next:before {
+    color: $color1;
+}
+
+.blue-title{
+    color:$color1;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.grey-text{
+    text-align: left;
+    color: #808080;
+    font-family: 'open sans', sans-serif;
+    font-weight: 400;
+}
+
+li{
+    list-style: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+ }
+@media screen and (max-width:600px){
+    button.slick-prev:before, button.slick-next:before{
+        display: none;
+    }
+}
