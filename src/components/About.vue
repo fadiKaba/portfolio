@@ -1,10 +1,10 @@
 <template>
     <div class="my-2 my-md-5 border-bottom py-2 py-md-4" id="about">
-        <h4 class="mb-2 mb-md-5 blue-title">About me</h4>
+        <h2 class="mb-2 mb-md-5 blue-title">About me</h2>
         <div class="card mb-3" style="max-width: 100%;">
             <div class="row g-0">
                 <div class="col-md-4">
-                <img src="../assets/images/fadi.jpg" alt="..." width="100%">
+                <img src="../assets/images/fadi.jpg" alt="fadi kaba" width="100%">
                 </div>
                 <div class="col-md-8 align-items-center d-flex justify-content-center">
                     <div class="card-body ">

@@ -1,6 +1,6 @@
 <template>
     <div class="border-bottom py-4" id="skills">
-        <h3 class="blue-title">Knowledge & skills</h3>
+        <h2 class="blue-title">Knowledge & skills</h2>
         <div class="mt-2 mt-md-5 progress-bars">
             <div class=" mb-2 mb-md-4">
                 <div>

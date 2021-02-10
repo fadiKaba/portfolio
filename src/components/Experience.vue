@@ -1,6 +1,6 @@
 <template>
     <div class="my-3 my-md-5" id="portfolio">
-        <h3 class="blue-title">Portfolio</h3>
+        <h2 class="blue-title">Portfolio</h2>
          <div class="mt-2 mt-md-4 list-group">
             <a class="list-group-item list-group-item-action border-0" aria-current="true">
                 <div class="d-flex w-100 justify-content-between">
